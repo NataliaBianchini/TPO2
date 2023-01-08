@@ -7,40 +7,53 @@
 }
 
 /* navegador */
+@font-face {
+    font-family: 'Hellobunny' ;
+    src: url(fonts/hello_bunny_2/Hello\ Bunny.otf);
+}
+
+@font-face {
+    font-family: 'Louis';
+    src: url(fonts/louis_george_caf/Louis\ George\ Cafe.ttf);
+}
+
+@font-face {
+    font-family: 'Quick';
+    src: url(fonts/quicksand/Quicksand_Book.otf);
+}
 
 @font-face {
     font-family: 'galliarde' ;
     src: url(fonts/Gaillarde\ des\ Collines_PersonalUseOnly.ttf);
 }
 
-
-
 nav{
-    background: coral;
-    height: 200px;
+    background: rgba(228,103,3,255);
+    height: 100px;
     width: 100%;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Quick', Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .enlace{
     position: absolute;
-    padding: 13px 50px;
+    padding: 1rem 1rem;
 }
 
 .logo{
-    height: 19vh;
+    height: 3.5rem;
 }
 
 nav ul{
     float: right;
     margin-right: 20px;
-    margin-top: 70px;
+    margin-top: 0px;
 }
 
 nav ul li{
     display: inline-block;
     line-height: 80px;
     margin: 0 5px;
+    
 }
 
 nav ul li a{
@@ -52,7 +65,7 @@ nav ul li a{
 }
 
 nav li a.active, nav li a:hover{
-    background: pink;
+    background:rgb(247, 190, 126);
     transition: 0.5s;
 }
 
@@ -69,55 +82,67 @@ nav li a.active, nav li a:hover{
 #check{
     display: none;
 }
-
-/*responsive*/
-
-@media (max-width: 952px){
-    .enlace{
-        padding-left: 20px;
-    }
-    nav ul li a{
-        font-size: 12px;
-    }
+body{
+    background-color: bisque;
 }
-
-@media (max-width: 858px){
-    .checkbtn{
-        display: block;
-    }
-    nav ul{
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        background: pink;
-        top: 130px;
-        left: -100%;
-        text-align: center;
-        transition: all 0.5s;
-    }
-    nav ul li{
-        display: block;
-        margin: 50px 0;
-        line-height: 30px;
-    }
-    nav ul li a{
-        font-size: 20px;
-    }
-    nav ul li a:hover, nav ul li a.active{
-        background: none;
-        color: violet;
-    }
-    #check:checked ~ ul{
-        left:0;
-    }
-
+.titulo_nosotros{
+    font-family: 'Hellobunny';
+    font-size: 90px;
+    font-weight: 100;
+    color: coral;
+    text-align:center;
+    margin: 1rem;
+    padding-top: 1rem;
+}
+.descripcion{
+    font-family: 'Quick';
+    font-size: 2.5rem;
+    text-align: center;
+    padding-top: 1rem;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    padding-bottom: 3rem;
+}
+.video{
+    display: inline-block;
+    margin: 2rem;
+    padding-inline-start: 5%;   
+}
+.mapa{
+    width: 100%;
+    background-color:rgba(248, 190, 123, 0.993);
+    color: rgb(209, 81, 34);
+    display: inline-block;
+}
+.mapa h2{
+   padding-top: 1rem;
+    text-align: center;
+   font-size: 60px;
+   font-style: italic;
+   color: blanchedalmond;
+}
+.mapa p{
+    font-family: 'Quick';
+    font-size: 2rem;
+    text-align: justify;
+    padding-top: 1rem;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    padding-bottom: 3rem;
+}
+#map{
+    width: 50%;
+    height: 400px;
+    margin-left: 25%;
+    margin-bottom: 1rem;
 }
 
 /* Pie de página */
 
 footer{
     padding: 30px 0;
-    background-color: coral;
+    margin-bottom: 0px;
+    background-color:rgba(228,103,3,255);
 }
 
 .footer .social{
@@ -173,5 +198,239 @@ footer{
     margin-top: 15px;
     text-align: center;
     font-size: 13px;
-    color: lightpink;
+    color: rgba(251,223,113,255);
+}
+
+/*-- Carousel de imagenes --*/
+.contenedor-slider{
+    width: 95%;
+    max-width: 1080px;
+    margin: auto;
+    overflow: hidden;
+    box-shadow: 0 0 0 5px #fff,
+                0 10px 50px;
+    position: relative;
+    z-index: 0;
+    
+    
+}
+.slider{
+    display: flex;
+    width: 400%;
+    height: 650px;
+    margin-left: -100%;
+
+
+}
+.slider-items{
+    width: 200%;
+
+}
+.slider-img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+.slider-btn{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: blanchedalmond;
+    opacity: 80%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    font-weight: bold;
+    color: coral;
+    text-align: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.slider-btn i{
+    margin-top: 10px;
+}
+.slider-btn:hover{
+    background: white;
+}
+.slider-btn-left{
+    left: 10px;
+}
+.slider-btn-right{
+    right: 10px;
+}
+
+/*responsive*/
+
+@media (max-width: 850px){
+    nav{
+        height: 80px;
+    }
+    .checkbtn{
+        display: block;
+    }
+    nav ul{
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        background: rgba(248, 190, 123, 0.993);
+        top:5rem;
+        left: -100%;
+        text-align: center;
+        transition: all 0.5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav ul li a{
+        font-size: 20px;
+        color: rgb(204, 82, 37);
+    }
+    li a:hover, li a.active{
+        background: none;
+        color: white;
+    }
+    #check:checked ~ ul{
+        left:0;
+        top: 5rem;
+    }
+    .enlace{
+        position: absolute;
+        width: 250px;
+    }
+    .logo{
+        height: 2.5rem;
+        width: 100%;
+    }
+
+    /*-- Carousel de imagenes --*/
+    .contenedor-slider{
+        width: 95%;
+        max-width: 800px;
+        margin: auto;
+        overflow: hidden;
+        box-shadow: 0 0 0 5px #fff,
+                    0 10px 50px;
+        position: relative;
+        z-index: 0;
+        
+    }
+    .slider{
+        display: flex;
+        width: 400%;
+        height: 400px;
+        margin-left: -100%;
+    }
+    .slider-items{
+        width: 200%;
+    }
+    .slider-img{
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .slider-btn{
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background: blanchedalmond;
+        opacity: 80%;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+        font-weight: bold;
+        color: coral;
+        text-align: center;
+        align-items: center;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    .slider-btn i{
+        margin-top: 10px;
+    }
+    .slider-btn:hover{
+        background: white;
+    }
+    .slider-btn-left{
+        left: 10px;
+    }
+    .slider-btn-right{
+        right: 10px;
+    }
+    .video{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .video iframe{
+        width: 80%;
+        margin: 5;
+    }
+    .mapa{
+        width: 100%;
+        height: auto;
+        background-color:rgba(248, 190, 123, 0.993);
+        color: rgb(209, 81, 34);
+    }
+    .mapa h2{
+       text-align: center;
+       font-size: 40px;
+       font-style: italic;
+       color: blanchedalmond;
+       margin-top: 1rem;
+    }
+    .mapa p{
+        font-family: 'Quick';
+        font-size: 2.5rem;
+        text-align: center;
+        padding-top: 1rem;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    padding-bottom: 3rem;
+    }
+    #map{
+        width: 80%;
+        margin: 10%;
+    }
+}
+@media (max-width: 1030px){
+    .titulo_nosotros{
+        font-size: 75px;
+        margin: 1rem;
+    }
+    .descripcion{
+        font-size: 25px;
+    }
+    .enlace{
+        position: absolute;  
+    }
+    .logo {
+        height: 3.5rem;
+    }
+    nav ul li a{
+        font-size: 12px;
+    }
+    .video{
+        width: 90%;
+    }
+    .mapa h2{
+        text-align: center;
+        font-size: 50px;
+        
+     }
+     .mapa p{
+         font-size: 25px;
+     
+     }
+     #map{
+         width: 70%;
+         margin: 15%;
+     }
+
+    
 }

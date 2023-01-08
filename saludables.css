@@ -13,29 +13,42 @@
     src: url(fonts/Gaillarde\ des\ Collines_PersonalUseOnly.ttf);
 }
 
+@font-face {
+    font-family: 'Quick';
+    src: url(fonts/quicksand/Quicksand_Book.otf);
+}
+
+@font-face {
+    font-family: 'Hellobunny' ;
+    src: url(fonts/hello_bunny_2/Hello\ Bunny.otf);
+}
+
+@font-face {
+    font-family: 'Louis';
+    src: url(fonts/louis_george_caf/Louis\ George\ Cafe.ttf);
+}
 
 
 nav{
-    background: coral;
-    height: 200px;
+    background: rgb(32, 126, 110);
+    height: 100px;
     width: 100%;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Quick';
 }
 
 .enlace{
     position: absolute;
-    padding: 13px 50px;
-}
+    padding: 1rem 1rem;
 
+}
 .logo{
-    height: 19vh;
+    height: 3.5rem;
 }
-
 nav ul{
     float: right;
     margin-right: 20px;
-    margin-top: 70px;
-}
+    margin-top: 0px;
+  }
 
 nav ul li{
     display: inline-block;
@@ -50,9 +63,7 @@ nav ul li a{
     border-radius: 3px;
     text-transform: uppercase;
 }
-
 nav li a.active, nav li a:hover{
-    background: pink;
     transition: 0.5s;
 }
 
@@ -65,51 +76,108 @@ nav li a.active, nav li a:hover{
     cursor: pointer;
     display: none;
 }
-
 #check{
     display: none;
 }
-
-/*responsive*/
-
-@media (max-width: 952px){
-    .enlace{
-        padding-left: 20px;
-    }
-    nav ul li a{
-        font-size: 12px;
-    }
+.seccion-1{
+    background-color: rgb(170, 248, 218);
 }
 
-@media (max-width: 858px){
-    .checkbtn{
-        display: block;
-    }
-    nav ul{
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        background: pink;
-        top: 130px;
-        left: -100%;
-        text-align: center;
-        transition: all 0.5s;
-    }
-    nav ul li{
-        display: block;
-        margin: 50px 0;
-        line-height: 30px;
-    }
-    nav ul li a{
-        font-size: 20px;
-    }
-    nav ul li a:hover, nav ul li a.active{
-        background: none;
-        color: violet;
-    }
-    #check:checked ~ ul{
-        left:0;
-    }
+.container{
+    display: flex;
+    width: 100%;
+    height: 80vh;
+    padding: 4% 0%;
+    box-sizing: border-box;
+}
+
+.box{
+    flex: 1;
+    overflow: hidden;
+    margin: 8px;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.30);
+    line-height: 0;
+    transition: all 300ms;
+}
+
+.box > img{
+    width: 200%;
+    height: calc(100% - 10vh);
+    object-fit: cover;
+    transition: all 300ms;
+}
+
+.box > span{
+    background-color: white;
+    font-size: 35px;
+    font-family: 'HelloBunny';
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    height: 10vh;
+    line-height: 2.6;
+}
+
+.box:hover{
+    flex: 50%;
+}
+
+.box:hover > img{
+    width: 100%;
+    height: 100%;
+}
+.titulo{
+    text-align: center;
+    color: rgb(32, 126, 110);
+    background-color: rgb(110, 173, 152);
+    font-size: 50px;
+    font-style: italic;
+    padding: 2rem;
+}
+.receta1, .receta2, .receta3, .receta4{
+    background-color: rgb(170, 248, 218);
+    padding: 1rem;
+}
+.receta1 img, .receta2 img, .receta3 img, .receta4 img{
+    width: 50%;
+    height: 30%;
+    margin-left: 25%;
+}
+.ingredientes{
+    text-align: center;
+    font-style: italic;
+    font-size: x-large;
+}
+.preparacion{
+    text-align: justify;
+    font-size: x-large;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+/* Boton "Ir arriva"  */
+#button-up{
+    width: 60px;
+    height: 60px;
+    background-color: rgb(32, 126, 110);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: blanchedalmond;
+    font-size: 30px;
+    position: fixed;
+    bottom: 100px;
+    right: 50px;
+    cursor: pointer;
+    border: 4px solid transparent;
+    transition: all 300ms ease;
+    transform: scale(0);
+
+}
+#button-up:hover{
+    transform: scale(1.1);
+    border-color: rgba(0, 0, 0, 0.1);
 
 }
 
@@ -117,7 +185,7 @@ nav li a.active, nav li a:hover{
 
 footer{
     padding: 30px 0;
-    background-color: coral;
+    background-color: rgb(114, 248, 203);
 }
 
 .footer .social{
@@ -173,5 +241,105 @@ footer{
     margin-top: 15px;
     text-align: center;
     font-size: 13px;
-    color: lightpink;
+    color: rgb(12, 110, 81);
+}
+
+/*responsive*/
+
+@media (max-width: 850px){
+    
+    nav{
+        height: 100px;
+    }
+    .checkbtn{
+        display: block;
+    }
+     nav ul{
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        background: rgb(114, 248, 203);;
+        top: 5rem;
+        left: -100%;
+        text-align: center;
+        transition: all 0.5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav ul li a{
+        font-size: 20px;
+        color: rgb(32, 126, 110);
+    }
+    li a:hover, li a.active{
+        background: none;
+        color: white;
+    }
+    #check:checked ~ ul{
+        left:0;
+        top: 5rem;
+    }
+    .enlace {
+        position: absolute;
+        width: 250px;
+    }
+    .logo {
+        height: 2.5rem;
+        width: 100%;
+    }
+}
+@media (max-width: 1030px){
+    .enlace{
+        position: absolute;  
+    }
+    .logo {
+        height: 3.5rem;
+    }
+    nav ul li a{
+        font-size: 12px;
+    }
+    
+    .titulo{
+        font-size: 20px;
+        font-style: italic;
+        padding: 0%;
+        color: rgb(190, 229, 228);
+    }
+    .receta1 img, .receta2 img, .receta3 img, .receta4 img{
+        width: 40%;
+        margin-left: 30%;
+    }
+    .ingredientes{
+        font-size: medium;
+    }
+    .preparacion{
+        font-size: medium;
+        padding: 1rem;
+    }
+    #button-up{
+        width: 40px;
+        height: 40px;
+        background-color: rgb(32, 126, 110);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: blanchedalmond;
+        font-size: 16px;
+        position: fixed;
+        bottom: 100px;
+        right: 10px;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: all 300ms ease;
+        transform: scale(0);
+
+    }
+    #button-up:hover{
+        transform: scale(1.1);
+        border-color: rgba(0, 0, 0, 0.1);
+
+    }
 }
